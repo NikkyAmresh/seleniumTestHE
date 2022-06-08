@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Worldometer Tests should click on the link 'Coronavirus updates' and return driver 1`] = `
+Object {
+  "driver": Driver {
+    "executor_": Executor {
+      "customCommands_": Map {
+        "launchApp" => Object {
+          "method": "POST",
+          "path": "/session/:sessionId/chromium/launch_app",
+        },
+        "getNetworkConditions" => Object {
+          "method": "GET",
+          "path": "/session/:sessionId/chromium/network_conditions",
+        },
+        "setNetworkConditions" => Object {
+          "method": "POST",
+          "path": "/session/:sessionId/chromium/network_conditions",
+        },
+        "sendDevToolsCommand" => Object {
+          "method": "POST",
+          "path": "/session/:sessionId/chromium/send_command",
+        },
+      },
+      "log_": Logger {
+        "handlers_": null,
+        "level_": null,
+        "name_": "webdriver.http.Executor",
+        "parent_": Logger {
+          "handlers_": null,
+          "level_": null,
+          "name_": "webdriver.http",
+          "parent_": Logger {
+            "handlers_": null,
+            "level_": null,
+            "name_": "webdriver",
+            "parent_": Logger {
+              "handlers_": null,
+              "level_": Level {
+                "name_": "OFF",
+                "value_": Infinity,
+              },
+              "name_": "",
+              "parent_": null,
+            },
+          },
+        },
+      },
+      "w3c": true,
+    },
+    "fileDetector_": null,
+    "onQuit_": undefined,
+    "session_": Promise {},
+  },
+}
+`;
+
+exports[`Worldometer Tests should open the Worldometer website 1`] = `
+Object {
+  "title": "Worldometer - real time world statistics",
+}
+`;
+
+exports[`Worldometer Tests should open the first country as after search 'aus'  1`] = `
+Object {
+  "cases": "7,498,932",
+  "deathsCount": "8,852",
+  "recoveredCount": "7,199,382",
+}
+`;
+
+exports[`Worldometer Tests should open the first country as after search 'china'  1`] = `
+Object {
+  "cases": "224,465",
+  "deathsCount": "5,226",
+  "recoveredCount": "218,258",
+}
+`;
+
+exports[`Worldometer Tests should open the first country as after search 'den'  1`] = `
+Object {
+  "cases": "2,988,099",
+  "deathsCount": "6,388",
+  "recoveredCount": "2,975,195",
+}
+`;
+
+exports[`Worldometer Tests should open the first country as after search 'indi'  1`] = `
+Object {
+  "cases": "43,190,282",
+  "deathsCount": "524,715",
+  "recoveredCount": "42,636,710",
+}
+`;
+
+exports[`Worldometer Tests should return the world current population and deaths today 1`] = `
+Object {
+  "deathsCount": "69,103",
+  "worldPopulation": "7,952,437,566",
+}
+`;
+
+exports[`Worldometer Tests should return total cases statistics 1`] = `
+Object {
+  "cases": "536,597,444",
+  "deathsCount": "6,323,428",
+  "recoveredCount": "507,719,599",
+}
+`;
+
+exports[`Worldometer Tests should search the countries as in and return the text on the table 1`] = `
+Object {
+  "tableText": "# Country,
+Other Total
+Cases New
+Cases Total
+Deaths New
+Deaths Total
+Recovered New
+Recovered Active
+Cases Serious,
+Critical Tot Cases/
+1M pop Deaths/
+1M pop Total
+Tests Tests/
+1M pop Population
+1 India 43,190,282 524,715 42,636,710 28,857 698 30,715 373 853,522,623 606,987 1,406,162,001
+2 Spain 12,436,538 106,914 11,902,145 427,479 339 265,797 2,285 471,036,328 10,067,097 46,789,687
+3 Argentina 9,276,618 128,973 8,895,999 251,646 344 201,686 2,804 35,716,069 776,515 45,995,343
+4 Indonesia 6,057,660 156,624 5,897,372 3,664 2,771 21,704 561 99,248,869 355,603 279,099,863
+5 Ukraine 5,014,929 108,605 N/A N/A N/A 177 116,013 2,512 19,521,252 451,594 43,227,415
+6 Philippines 3,691,892 60,456 3,628,999 2,437 434 32,848 538 30,327,479 269,834 112,392,918
+7 Singapore 1,325,623 1,394 1,244,842 79,387 9 223,205 235 23,877,882 4,020,490 5,939,047
+8 Finland 1,105,211 4,627 N/A N/A N/A 21 198,875 833 10,942,610 1,969,047 5,557,312
+9 Bahrain 590,806 1,489 583,603 5,714 5 325,413 820 9,882,771 5,443,376 1,815,559
+10 Dominican Republic 588,408 4,379 580,224 3,805 11 53,213 396 3,387,537 306,353 11,057,638
+11 Palestine 582,495 5,356 576,993 146 17 109,286 1,005 3,078,533 577,586 5,329,999
+12 Bosnia and Herzegovina 378,022 15,791 N/A N/A N/A 116,620 4,872 1,780,471 549,275 3,241,492
+13 China 224,465 +67 5,226 218,258 +162 981 39 156 4 160,000,000 111,163 1,439,323,776
+14 Martinique 175,958 941 104 174,913 8 469,592 2,511 828,928 2,212,221 374,704
+15 Trinidad and Tobago 163,178 3,947 151,070 8,161 18 115,875 2,803 753,645 535,174 1,408,224
+16 Suriname 80,673 1,352 49,526 29,795 135,184 2,266 237,519 398,010 596,766
+17 Eswatini 72,749 1,410 71,106 233 11 61,479 1,192 1,029,936 870,376 1,183,323
+18 Papua New Guinea 44,639 651 43,954 34 7 4,813 70 249,149 26,866 9,273,735
+19 Guinea 36,597 442 36,113 42 8 2,648 32 660,107 47,767 13,819,375
+20 Benin 26,952 163 25,506 1,283 5 2,116 13 604,310 47,452 12,735,234
+21 Saint Lucia 26,234 371 25,327 536 4 141,618 2,003 203,001 1,095,851 185,245
+22 Burkina Faso 20,853 382 20,439 32 948 17 248,995 11,314 22,008,021
+23 Liechtenstein 17,568 84 17,408 76 458,228 2,191 102,174 2,665,015 38,339
+24 San Marino 17,124 115 16,910 99 4 502,627 3,376 152,231 4,468,314 34,069
+25 Equatorial Guinea 15,927 183 15,706 38 5 10,676 123 330,977 221,862 1,491,816
+26 Dominica 14,295 67 13,897 331 197,633 926 203,318 2,810,939 72,331
+27 Saint Martin 10,668 63 1,399 9,206 7 267,121 1,577 112,382 2,813,982 39,937
+28 Sint Maarten 10,434 86 10,292 56 10 238,143 1,963 62,056 1,416,351 43,814
+29 Guinea-Bissau 8,290 171 8,055 64 6 4,029 83 140,302 68,185 2,057,657
+30 St. Vincent Grenadines 6,923 108 6,641 174 62,023 968 99,800 894,113 111,619
+31 British Virgin Islands 6,765 62 N/A N/A N/A 1 220,941 2,025 104,163 3,401,907 30,619
+32 Sao Tome and Principe 6,003 73 5,918 12 26,444 322 29,036 127,910 227,004
+33 Saint Kitts and Nevis 5,811 43 5,669 99 107,763 797 82,625 1,532,249 53,924
+34 Saint Pierre Miquelon 2,748 1 2,449 298 1 478,829 174 23,787 4,144,799 5,739
+35 Diamond Princess 712 13 699 0
+36 Saint Helena 2 2 0 327 6,112
+Total: 536,597,444 +122,134 6,323,428 +142 507,719,599 +191,725 22,554,417 36,568 68,840.4 811.2",
+}
+`;
+
+exports[`Worldometer Tests should search the countries as india and return the text on the table 1`] = `
+Object {
+  "tableText": "# Country,
+Other Total
+Cases New
+Cases Total
+Deaths New
+Deaths Total
+Recovered New
+Recovered Active
+Cases Serious,
+Critical Tot Cases/
+1M pop Deaths/
+1M pop Total
+Tests Tests/
+1M pop Population
+1 India 43,190,282 524,715 42,636,710 28,857 698 30,715 373 853,522,623 606,987 1,406,162,001
+Total: 536,597,444 +122,134 6,323,428 +142 507,719,599 +191,725 22,554,417 36,568 68,840.4 811.2",
+}
+`;

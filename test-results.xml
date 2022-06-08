@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="92.4570" tests="10" failures="0">
+  <testsuite name="Root Suite" timestamp="2022-06-08T16:33:50" tests="0" time="0.0000" failures="0">
+  </testsuite>
+  <testsuite name="Worldometer Tests" timestamp="2022-06-08T16:33:51" tests="10" file="/Users/nikkyamresh/Downloads/selenium-javascript/Selenium/test.js" time="90.9220" failures="0">
+    <testcase name="Worldometer Tests should open the Worldometer website" time="67.9040" classname="should open the Worldometer website">
+    </testcase>
+    <testcase name="Worldometer Tests should return the world current population and deaths today" time="0.0420" classname="should return the world current population and deaths today">
+    </testcase>
+    <testcase name="Worldometer Tests should click on the link &apos;Coronavirus updates&apos; and return driver" time="3.1390" classname="should click on the link &apos;Coronavirus updates&apos; and return driver">
+    </testcase>
+    <testcase name="Worldometer Tests should return total cases statistics" time="0.0640" classname="should return total cases statistics">
+    </testcase>
+    <testcase name="Worldometer Tests should search the countries as in and return the text on the table" time="0.7310" classname="should search the countries as in and return the text on the table">
+    </testcase>
+    <testcase name="Worldometer Tests should search the countries as india and return the text on the table" time="0.4940" classname="should search the countries as india and return the text on the table">
+    </testcase>
+    <testcase name="Worldometer Tests should open the first country as after search &apos;aus&apos; " time="2.2140" classname="should open the first country as after search &apos;aus&apos; ">
+    </testcase>
+    <testcase name="Worldometer Tests should open the first country as after search &apos;den&apos; " time="4.3010" classname="should open the first country as after search &apos;den&apos; ">
+    </testcase>
+    <testcase name="Worldometer Tests should open the first country as after search &apos;indi&apos; " time="4.6310" classname="should open the first country as after search &apos;indi&apos; ">
+    </testcase>
+    <testcase name="Worldometer Tests should open the first country as after search &apos;china&apos; " time="4.3920" classname="should open the first country as after search &apos;china&apos; ">
+    </testcase>
+  </testsuite>
+</testsuites>
