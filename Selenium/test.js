@@ -15,8 +15,6 @@ const screen = {
   height: 480,
 };
 
-// const baseUrl = "http://localhost:8000";/
-
 let driver;
 
 before(async function () {
@@ -42,7 +40,7 @@ describe("Worldometer Tests", async () => {
   let WorldometerService = indexFunctions.WorldometerService;
 
   it("should open the Worldometer website", async () => {
-    result = await WorldometerService.open();
+    result = await WorldometerService.open(driver);
     assert.equal(
       "Worldometer - real time world statistics",
       result.title,
@@ -52,7 +50,9 @@ describe("Worldometer Tests", async () => {
   });
 
   it("should return the world current population and deaths today", async () => {
-    result = await WorldometerService.getCurrentWorldPopulationAndDeathsToday();
+    result = await WorldometerService.getCurrentWorldPopulationAndDeathsToday(
+      driver
+    );
     assert.equal(
       "7,952,437,566",
       result.worldPopulation,
@@ -67,7 +67,7 @@ describe("Worldometer Tests", async () => {
   });
 
   it("should click on the link 'Coronavirus updates' and return driver", async () => {
-    result = await WorldometerService.clickOnCoronavirusUpdateLink();
+    result = await WorldometerService.clickOnCoronavirusUpdateLink(driver);
 
     const newUrl = await result.driver.getCurrentUrl();
     const newTitle = await result.driver.getTitle();
@@ -86,7 +86,7 @@ describe("Worldometer Tests", async () => {
   });
 
   it("should return total cases statistics", async () => {
-    result = await WorldometerService.getCoronavirusStatistics();
+    result = await WorldometerService.getCoronavirusStatistics(driver);
 
     assert.equal(
       result.cases,
@@ -107,32 +107,32 @@ describe("Worldometer Tests", async () => {
   });
 
   it("should search the countries as in and return the text on the table", async () => {
-    result = await WorldometerService.searchCountry("in");
+    result = await WorldometerService.searchCountry(driver, "in");
     expect(result).toMatchSnapshot();
   });
 
   it("should search the countries as india and return the text on the table", async () => {
-    result = await WorldometerService.searchCountry("india");
+    result = await WorldometerService.searchCountry(driver, "india");
     expect(result).toMatchSnapshot();
   });
 
   it("should open the first country as after search 'aus' ", async () => {
-    result = await WorldometerService.openFirstCountry("aus");
+    result = await WorldometerService.openFirstCountry(driver, "aus");
     expect(result).toMatchSnapshot();
   });
 
   it("should open the first country as after search 'den' ", async () => {
-    result = await WorldometerService.openFirstCountry("den");
+    result = await WorldometerService.openFirstCountry(driver, "den");
     expect(result).toMatchSnapshot();
   });
 
   it("should open the first country as after search 'indi' ", async () => {
-    result = await WorldometerService.openFirstCountry("indi");
+    result = await WorldometerService.openFirstCountry(driver, "indi");
     expect(result).toMatchSnapshot();
   });
 
   it("should open the first country as after search 'china' ", async () => {
-    result = await WorldometerService.openFirstCountry("china");
+    result = await WorldometerService.openFirstCountry(driver, "china");
     expect(result).toMatchSnapshot();
   });
 });
