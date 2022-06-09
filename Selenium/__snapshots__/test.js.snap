@@ -1,59 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Worldometer Tests should click on the link 'Coronavirus updates' and return driver 1`] = `
-Object {
-  "driver": Driver {
-    "executor_": Executor {
-      "customCommands_": Map {
-        "launchApp" => Object {
-          "method": "POST",
-          "path": "/session/:sessionId/chromium/launch_app",
-        },
-        "getNetworkConditions" => Object {
-          "method": "GET",
-          "path": "/session/:sessionId/chromium/network_conditions",
-        },
-        "setNetworkConditions" => Object {
-          "method": "POST",
-          "path": "/session/:sessionId/chromium/network_conditions",
-        },
-        "sendDevToolsCommand" => Object {
-          "method": "POST",
-          "path": "/session/:sessionId/chromium/send_command",
-        },
-      },
-      "log_": Logger {
-        "handlers_": null,
-        "level_": null,
-        "name_": "webdriver.http.Executor",
-        "parent_": Logger {
-          "handlers_": null,
-          "level_": null,
-          "name_": "webdriver.http",
-          "parent_": Logger {
-            "handlers_": null,
-            "level_": null,
-            "name_": "webdriver",
-            "parent_": Logger {
-              "handlers_": null,
-              "level_": Level {
-                "name_": "OFF",
-                "value_": Infinity,
-              },
-              "name_": "",
-              "parent_": null,
-            },
-          },
-        },
-      },
-      "w3c": true,
-    },
-    "fileDetector_": null,
-    "onQuit_": undefined,
-    "session_": Promise {},
-  },
-}
-`;
+exports[`Worldometer Tests should click on the link 'Coronavirus updates' and return driver 1`] = `Object {}`;
 
 exports[`Worldometer Tests should open the Worldometer website 1`] = `
 Object {

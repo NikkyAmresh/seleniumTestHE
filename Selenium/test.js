@@ -7,7 +7,7 @@ chai.use(jestSnapshotPlugin());
 
 const { Builder, Key, By, until } = require("selenium-webdriver");
 const chrome = require("selenium-webdriver/chrome");
-const service = new chrome.ServiceBuilder("./chromedriver1eebc8c");
+const service = new chrome.ServiceBuilder("./chromedriver");
 const firefox = require("selenium-webdriver/firefox");
 
 const screen = {
@@ -27,7 +27,7 @@ before(async function () {
         .addArguments("--disable-dev-shm-usage")
         .windowSize(screen)
     )
-    // .setChromeService(service)
+    .setChromeService(service)
     .setFirefoxOptions(new firefox.Options().headless().windowSize(screen))
     .build();
 });
@@ -82,6 +82,7 @@ describe("Worldometer Tests", async () => {
       newTitle,
       "Error getting the old"
     );
+    delete result.driver;
     expect(result).toMatchSnapshot();
   });
 
