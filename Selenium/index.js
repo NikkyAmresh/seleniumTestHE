@@ -21,7 +21,7 @@ before(async function () {
         .addArguments("--disable-dev-shm-usage")
         .windowSize(screen)
     )
-    .setChromeService(service)
+    // .setChromeService(service)
     .setFirefoxOptions(new firefox.Options().headless().windowSize(screen))
     .build();
 });

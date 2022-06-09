@@ -5,7 +5,35 @@ const { jestSnapshotPlugin } = require("mocha-chai-jest-snapshot");
 const expect = chai.expect;
 chai.use(jestSnapshotPlugin());
 
+const { Builder, Key, By, until } = require("selenium-webdriver");
+const chrome = require("selenium-webdriver/chrome");
+const service = new chrome.ServiceBuilder("./chromedriver1eebc8c");
+const firefox = require("selenium-webdriver/firefox");
+
+const screen = {
+  width: 640,
+  height: 480,
+};
+
 // const baseUrl = "http://localhost:8000";/
+
+let driver;
+
+before(async function () {
+  driver = await new Builder()
+    .forBrowser("chrome")
+    .setChromeOptions(
+      new chrome.Options()
+        .addArguments("--headless")
+        .addArguments("--no-sandbox")
+        .addArguments("--disable-dev-shm-usage")
+        .windowSize(screen)
+    )
+    // .setChromeService(service)
+    .setFirefoxOptions(new firefox.Options().headless().windowSize(screen))
+    .build();
+});
+
 const baseUrl = "https://worldometers-clone.web.app";
 
 var indexFunctions = require("./index");
@@ -108,3 +136,5 @@ describe("Worldometer Tests", async () => {
     expect(result).toMatchSnapshot();
   });
 });
+
+after(() => driver && driver.quit());
