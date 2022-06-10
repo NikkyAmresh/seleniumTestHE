@@ -4,94 +4,70 @@ const baseUrl = "https://worldometers-clone.web.app/";
 
 const WorldometerService = {
   open: async (driver) => {
-    await driver.get(baseUrl);
-    const title = await driver.getTitle();
+    // user needs to open the given URL in the driver and
+    // then return the title of the webpage as the object
     return { title };
   },
   getCurrentWorldPopulationAndDeathsToday: async (driver) => {
-    let worldPopulation = await driver.findElement(
-      By.xpath('//*[@id="c1"]/div[1]/span[1]/span')
-    );
-    let deathsCount = await driver.findElement(
-      By.xpath("/html/body/div[4]/div[2]/div[2]/div[1]/div[2]/div[6]/span[1]")
-    );
+    // user needs to search for the 2 data
+    // 1.  world population,
+    //   2. Today deathsCount on the home page and
+    // return as the object
     return {
-      deathsCount: await deathsCount.getText(),
-      worldPopulation: await worldPopulation.getText(),
+      deathsCount,
+      worldPopulation,
     };
   },
 
   clickOnCoronavirusUpdateLink: async (driver) => {
-    let link = await driver.findElement(
-      By.xpath("/html/body/div[4]/div[2]/div[2]/div[1]/div[1]/a")
-    );
-    await link.click();
+    // find the link as text `Coronavirus updates` on the home page and click on the link and
+    // return the driver as the object
     return {
       driver,
     };
   },
 
   getCoronavirusStatistics: async (driver) => {
-    let cases = await driver.findElement(
-      By.xpath('//*[@id="maincounter-wrap"]/div/span')
-    );
-    let deathsCount = await driver.findElement(
-      By.xpath("/html/body/div[3]/div[2]/div[1]/div/div[6]/div/span")
-    );
-    let recoveredCount = await driver.findElement(
-      By.xpath("/html/body/div[3]/div[2]/div[1]/div/div[7]/div/span")
-    );
+    // find the 3 data from the `Coronavirus updates` webpage
+
+    // total cases
+    // total deaths Count
+    // total recovered Count
+
+    // and return the 3 values as output in an object format
+
     return {
-      cases: await cases.getText(),
-      deathsCount: await deathsCount.getText(),
-      recoveredCount: await recoveredCount.getText(),
+      cases,
+      deathsCount,
+      recoveredCount,
     };
   },
 
   searchCountry: async (driver, query) => {
-    let searchBox = await driver.findElement(
-      By.xpath('//*[@id="main_table_countries_today_filter"]/label/input')
-    );
-    await driver.executeScript(
-      "return arguments[0].scrollIntoView();",
-      searchBox
-    );
-    await driver.sleep(300);
-    await searchBox.click();
-    await searchBox.clear();
-    await searchBox.sendKeys(query, Key.RETURN);
-    let tableCountries = await driver.findElement(
-      By.xpath('//*[@id="main_table_countries_today"]')
-    );
-    return { tableText: await tableCountries.getText() };
+    // find the search box just above the country-wise statics table with id 'main_table_countries_today'
+    // and search the country in the search box from the `Coronavirus updates` webpage as per input(query)
+    // and return the whole text of the table with id 'main_table_countries_today' as object format
+    return { tableText };
   },
 
   openFirstCountry: async (driver, query) => {
-    await WorldometerService.searchCountry(driver, query);
-    const firstCountryLink = await driver.findElement(
-      By.xpath(
-        "/html/body/div[3]/div[3]/div/div[6]/div[1]/div/table/tbody[1]/tr/td[2]/a"
-      )
-    );
-    await firstCountryLink.click();
+    // find the search box just above the country-wise statics table with id 'main_table_countries_today'
+    //  and search the country in the search box from the `Coronavirus updates` webpage
+    // and click on the first country link in the table with id 'main_table_countries_today' after performing a search.
+    // please wait until the webpage is fully loaded for a specific country which we clicked
+    // and return the 3 data from the new open webpage as
+    // total cases
+    // total deaths Count
+    // total recovered Count
+    // and return the 3 values as output in an object format then
 
-    let cases = await driver.findElement(
-      By.xpath("/html/body/div[3]/div[2]/div[1]/div/div[4]/div/span")
-    );
-    let deathsCount = await driver.findElement(
-      By.xpath("/html/body/div[3]/div[2]/div[1]/div/div[5]/div/span")
-    );
-    let recoveredCount = await driver.findElement(
-      By.xpath("/html/body/div[3]/div[2]/div[1]/div/div[6]/div/span")
-    );
+    // return back to the previous page.
 
-    const result = {
-      cases: await cases.getText(),
-      deathsCount: await deathsCount.getText(),
-      recoveredCount: await recoveredCount.getText(),
+    return {
+      cases,
+      deathsCount,
+      recoveredCount,
     };
-    driver.navigate().back();
-    return result;
   },
 };
 
